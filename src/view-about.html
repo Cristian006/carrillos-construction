@@ -1,0 +1,57 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="view-about">
+  <template>
+    <style include="shared-styles">
+        :host {
+            text-align: center;
+            display: block;
+        }
+        #one{
+            background-image: url("../images/dune.jpg");
+        }
+        img{
+            margin: 0 auto;
+            max-width: 200px;
+            border-radius: 50%;
+        }
+        .person{
+            padding: 30px;
+        }
+        
+        .title{
+            color: var(--app-accent-color);
+            font-weight: 600;
+            font-size: 32px;
+        }
+        
+        .profession{
+            color: #616161;
+            font-size: 24px;
+        }
+    </style>
+    <div id="one" class="back-image"></div>
+    <div class="content">
+      <div class="container">
+            <p>
+                At <span class="company">Carrillos Construction</span> we specialize in construction and maintenance of golf courses, and general construction. Our employees have the skills and experience companies seek. Each one is dedicated to a single set of values, which are built around our Mission as a company. For small and large clients, major and minor markets, and candidates of every level, our commitment remains the same on what’s important to us as a staffing company, getting the job done, attracting new business and helping our customers find the people and human resource services they need.
+            </p>
+            <hr>
+            <div class="person">
+                <img src="images/profile.png">
+                <div class="title">Eleazar Carrillo</div>
+                <div class="profession">CEO</div>
+            </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    class About extends Polymer.Element {
+      static get is() { return 'view-about'; }
+    }
+
+    window.customElements.define(About.is, About);
+  </script>
+</dom-module>

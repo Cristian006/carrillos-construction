@@ -1,0 +1,141 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="app-icons.html">
+<link rel="import" href="shared-styles.html">
+<dom-module id="id-card">
+    <template>
+        <style include="shared-styles">
+                :host {
+                display: block;
+                border-style: solid;
+                border-width: 2px;
+                border-radius: 4px;
+                border-color: var(--app-accent-color);
+                text-align: left;
+                width: -webkit-fit-content;
+                height: -webkit-fit-content;
+                width: -moz-fit-content;
+                height: -moz-fit-content;
+                max-width: 600px;
+                padding: 20px;
+                margin: 0 auto;
+            }
+            
+            .contact-image {
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                height: -webkit-fit-content;
+                height: -mox-fit-content;
+                float: left;
+            }
+            
+            .contact-image iron-icon{
+                --iron-icon-width:100px;
+                --iron-icon-height: 100px;
+                --iron-icon-fill-color: var(--app-accent-color);
+            }
+            
+            .contact-card img {
+                border-radius: 50%;
+                width: 100px;
+                margin: 0 auto;
+                padding: 0px;
+            }
+            
+            .contact-info {
+                padding-left: 20px;
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                float: left;
+            }
+            
+            .contact-info #name {
+                font-size: 32px;
+                font-weight: 400;
+            }
+            
+            .contact-info #profession {
+                color: var(--app-accent-color);
+                font-size: 20px;
+                font-weight: 500;
+                margin-bottom: 10px;
+            }
+            
+            .contact-info #phone,
+            .contact-info #email,
+            .contact-info #website
+            .contact-info #location {
+                font-weight: 500;
+                font-size: 16px;
+                margin-bottom: 5px;
+            }
+            
+            .contact-info a {
+                color: inherit;
+            }
+            
+            .contact-info a:hover {
+                color: var(--app-accent-color);
+            }
+            
+            @media screen and (max-width: 700px) {
+                .contact-image {
+                    padding-bottom: 20px;
+                    margin: 0 auto;
+                    height: auto;
+                    float: none;
+                }
+                .contact-info {
+                    padding: 0px;
+                    margin: 0 auto;
+                    float: none;
+                }
+                .contact-info #name {
+                    font-size: 26px;
+                }
+                .contact-info #profession {
+                    font-size: 18px;
+                }
+                .contact-info #phone,
+                .contact-info #email,
+                .contact-info #website,
+                .contact-info #location {
+                    font-size: 12px;
+                }
+        </style>
+        <div class="contact-card">
+            <div class="contact-image"> <iron-icon icon="app-icons:business"></iron-icon></div>
+            <div class="contact-info"> <span id="name">[[name]]</span>
+                <div id="profession">[[profession]]</div>
+                <div id="phone">
+                    <iron-icon icon="app-icons:phone"></iron-icon> [[phone]]</div>
+                <div id="email">
+                    <iron-icon icon="app-icons:mail"></iron-icon> [[email]]</div>
+                <div id="website">
+                    <a href="[[website]]">
+                        <iron-icon icon="app-icons:website"></iron-icon> [[website]]</a>
+                </div>
+                <div id="location"><iron-icon icon="app-icons:location"></iron-icon>[[location]]</div>
+            </div>
+            <div class="clear-floats"></div>
+        </div>
+    </template>
+    <script>
+        class IDCard extends Polymer.Element {
+            static get is() {
+                return 'id-card';
+            }
+            static get properties() {
+                return {
+                    imgSrc: String
+                    , name: String
+                    , profession: String
+                    , phone: String
+                    , email: String
+                    , website: String,
+                    location: String
+                };
+            }
+        }
+        window.customElements.define(IDCard.is, IDCard);
+    </script>
+</dom-module>

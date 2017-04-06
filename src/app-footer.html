@@ -1,0 +1,86 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="app-icons.html">
+<link rel="import" href="shared-styles.html">
+<dom-module id="app-footer">
+  <template>
+    <style include="shared-styles">
+        :host {
+            display: block;
+            width: auto;
+            color: #616161;
+            padding: 10px;
+            padding-left: 0px;
+            padding-left: 0px;
+        }
+      
+        .small-icon {
+            --iron-icon-height: 18px;
+            --iron-icon-width: 18px;
+        }
+
+        #love {
+            padding: 10px;
+            text-align: center;
+        }
+
+        a#poly-icon {
+            color: #1e88e5;
+        }
+        
+        a:hover{
+            background-color: rgba(0,0,0,0);
+        }
+
+        #love #heart {
+            --iron-icon-fill-color: #F44336;
+        }
+        
+        ul{
+            margin: 0 auto;
+            width: -webkit-fit-content;
+        }
+        
+        li{
+            padding: 10px;
+            float: left;
+        }
+        
+        .clear-floats{
+            clear: both;
+        }
+        
+        @media(max-width: 900px){
+            ul{
+                text-align: center;
+                align-items: center;
+                align-content: center;
+            }
+            li{
+                float: none;
+            }
+        }
+    </style>
+    <ul>
+        <li><iron-icon icon="app-icons:phone"></iron-icon> (989) 741-2614</li>
+        <li><iron-icon icon="app-icons:mail"></iron-icon> carrillosconstructioninc@gmail.com</li>
+        <li><iron-icon icon="app-icons:location"></iron-icon> 1101 SW 98th ter Pembroke Pines fl 33025</li>
+    </ul>
+    <div class="clear-floats"></div>
+    <div id="love">
+        <iron-icon class="small-icon" icon="app-icons:code"></iron-icon> with
+        <iron-icon class="small-icon" id="heart" icon="app-icons:heart"></iron-icon> and
+        <a id="poly-icon" href="https://www.polymer-project.org/">
+        <iron-icon class="small-icon" icon="app-icons:polymer"></iron-icon>
+        </a> by <a href="www.cristian.space">Cristian Ponce</a>
+    </div>
+  </template>
+
+  <script>
+    class Footer extends Polymer.Element {
+      static get is() { return 'app-footer'; }
+    }
+
+    window.customElements.define(Footer.is, Footer);
+  </script>
+</dom-module>

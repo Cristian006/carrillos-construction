@@ -1,0 +1,58 @@
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="view-home">
+  <template>
+    <style include="shared-styles">
+        :host {
+            display: block;
+            text-align: center;
+        }
+        
+        #one{
+            background-image: url("../images/lawnmower.png");
+        }
+        
+        #two{
+            background-image: url("../images/dirt.jpg");
+        }
+    </style>
+      <div id="one" class="back-image"></div>
+      <div class="content">
+          <div class="container">
+            <p>
+                <span class="company">Carrillos Construction</span> is a skilled personnel company specializing in construction trades and maintenance of golf courses. We help businesses everyday with the constant challenges of finding qualified people to help their businesses grow.
+            </p>
+            <hr>
+            <p>
+                <span class="company">Carrillos Construction</span> also offers recruiting services on a fee basis such as: 
+            </p>
+            <ul>
+                <li>Project Managers</li>
+                <li>Superintendents</li>
+                <li>Estimators</li>
+            </ul>
+            <p>
+              <a href="/contact">Contact us</a> and find the ideal candidate. 
+            </p>
+          </div>
+      </div>
+      <div id="two" class="back-image"></div>
+      <div class="content">
+          <div class="container">
+            <p>Save time and money on advertising, recruiting, background checks, interviewing, checking references, HR Staff and drug testing. We do all the screening per your specifications. We pride ourselves on hiring only the most qualified and skilled professionals, enabling you to complete your job - on budget and on time.
+          In these tough economic times, choosing <span class="company">Carrillos Construction</span> as your golf construction staffing company is simply good business.</p>
+          </div>
+      </div>
+          
+      
+  </template>
+
+  <script>
+    class Home extends Polymer.Element {
+      static get is() { return 'view-home'; }
+    }
+
+    window.customElements.define(Home.is, Home);
+  </script>
+</dom-module>
