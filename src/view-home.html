@@ -1,6 +1,6 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-
+<link rel="import" href="hero-img.html">
 <dom-module id="view-home">
   <template>
     <style include="shared-styles">
@@ -8,16 +8,9 @@
             display: block;
             text-align: center;
         }
-        
-        #one{
-            background-image: url("../images/lawnmower.png");
-        }
-        
-        #two{
-            background-image: url("../images/dirt.jpg");
-        }
     </style>
-      <div id="one" class="back-image"></div>
+      <hero-img img-src="../images/lawnmower.png"></hero-img>
+      <!--div id="one" class="back-image"></div-->
       <div class="content">
           <div class="container">
             <p>
@@ -37,7 +30,7 @@
             </p>
           </div>
       </div>
-      <div id="two" class="back-image"></div>
+      <hero-img img-src="../images/dirt.jpg"></hero-img>
       <div class="content">
           <div class="container">
             <p>Save time and money on advertising, recruiting, background checks, interviewing, checking references, HR Staff and drug testing. We do all the screening per your specifications. We pride ourselves on hiring only the most qualified and skilled professionals, enabling you to complete your job - on budget and on time.

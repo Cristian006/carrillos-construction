@@ -1,16 +1,12 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="shared-styles.html">
-
+<link rel="import" href="hero-img.html">
 <dom-module id="view-whatwedo">
   <template>
     <style include="shared-styles">
       :host {
         display: block;
       }
-        #one{
-            background-image: url("../images/work.jpg");
-        }
-        
         h1{
             color: var(--app-accent-color);
         }
@@ -23,7 +19,7 @@
             padding: 20px;
         }
     </style>
-        <div id="one" class="back-image"></div>
+        <hero-img img-src="../images/work.jpg"></hero-img>
         <div class="content">
           <div class="container">
             <h1>Why Us?</h1>
@@ -34,7 +30,6 @@
               <p>We stand apart from other construction staffing companies. How so? First-hand knowledge and experience. Our proven approach to construction staffing ensures our staff arrives at your worksite with the skills, experience and attitude to get the job done right — every time.</p>
             <h1>The Right Solution</h1>
              <p>Carrillos Construction provides the right solutions for the most pressing issues at your golf course or private club. We build and maintain superior course conditions, we understand what our guests want because we take the time to ask them, and we deliver a consistently great experience.</p>
-            <hr>
           </div>
         </div>
   </template>

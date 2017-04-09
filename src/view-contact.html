@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
 <link rel="import" href="id-card.html">
 <link rel="import" href="shared-styles.html">
-
+<link rel="import" href="hero-img.html">
 <dom-module id="view-contact">
   <template>
     <style include="shared-styles">
@@ -9,10 +9,6 @@
         display: block;
           text-align: center;
       }
-        
-        #one{
-            background-image: url("../images/lawn.jpg");
-        }
     
         .content{
             padding: 20px;
@@ -81,7 +77,7 @@
                 color: var(--app-accent-color);
             }
     </style>
-      <div id="one" class="back-image"></div>
+      <hero-img img-src="../images/golf.png"></hero-img>
         <div class="content">
           <div class="container">
               <id-card img-src="images/dirt.jpg" name="Carrillos Construction, Inc." phone="(989) 741-2614" email="carrillosconstructioninc@gmail.com" website="http://carrillos-construction.com" location="1101 SW 98th ter Pembroke Pines FL 33025"></id-card>

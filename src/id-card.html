@@ -77,6 +77,16 @@
                 color: var(--app-accent-color);
             }
             
+            .left{
+                float: left;
+                display: inline-block;
+            }
+            
+            .fit{
+                width: -webkit-fit-content;
+                width: -moz-fit-content;
+                text-overflow:clip;
+            }
             @media screen and (max-width: 700px) {
                 .contact-image {
                     padding-bottom: 20px;
@@ -91,6 +101,7 @@
                 }
                 .contact-info #name {
                     font-size: 26px;
+                    text-align: center;
                 }
                 .contact-info #profession {
                     font-size: 18px;
@@ -101,20 +112,28 @@
                 .contact-info #location {
                     font-size: 12px;
                 }
+            }
         </style>
         <div class="contact-card">
             <div class="contact-image"> <iron-icon icon="app-icons:business"></iron-icon></div>
-            <div class="contact-info"> <span id="name">[[name]]</span>
+            <div class="contact-info"> <div id="name">[[name]]</div>
                 <div id="profession">[[profession]]</div>
                 <div id="phone">
-                    <iron-icon icon="app-icons:phone"></iron-icon> [[phone]]</div>
+                    <iron-icon class="left" icon="app-icons:phone"></iron-icon>
+                    <div class="left fit">[[phone]]</div>
+                    <div class="clear-floats"></div>
+                </div>
                 <div id="email">
                     <iron-icon icon="app-icons:mail"></iron-icon> [[email]]</div>
                 <div id="website">
                     <a href="[[website]]">
                         <iron-icon icon="app-icons:website"></iron-icon> [[website]]</a>
                 </div>
-                <div id="location"><iron-icon icon="app-icons:location"></iron-icon>[[location]]</div>
+                <div id="location">
+                    <iron-icon class="left" icon="app-icons:location"></iron-icon>
+                    <div class="left fit">[[location]]</div>
+                    <div class="clear-floats"></div>
+                </div>
             </div>
             <div class="clear-floats"></div>
         </div>

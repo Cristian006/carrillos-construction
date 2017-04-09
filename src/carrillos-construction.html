@@ -16,56 +16,77 @@
 <link rel="import" href="app-footer.html">
 <link rel="import" href="app-icons.html">
 <link rel="import" href="shared-styles.html">
-<dom-module id="my-app">
+<dom-module id="carrillos-construction">
   <template>
     <style include="shared-styles">
-      :host {
-        --app-primary-color: white;
-        --app-secondary-color: #FFEB3B;
-        --app-accent-color: #4CAF50;
-        --paper-tab-ink: var(--app-secondary-color);
-        --paper-tabs-selection-bar-color: var(--app-accent-color);
-        display: block;
-      }
+        :host {
+            --app-primary-light: #AED581;
+            --app-primary-color: #8BC34A;
+            --app-primary-dark: #33691E;
+            --app-secondary-color: #FFEB3B;
+            --app-ink-color: #F1F8E9;
+            --app-accent-color: #8BC34A;
+            --paper-tab-ink: var(--app-ink-color);
+            --paper-tabs-selection-bar-color: var(--app-ink-color);
+            display: block;
+        }
     
-      [hidden] {
-        display: none !important;
-      }
+        [hidden] {
+            display: none !important;
+        }
 
-      app-drawer-layout:not([narrow]) [drawer-toggle] {
-        display: none;
-      }
+        app-drawer-layout:not([narrow]) [drawer-toggle] {
+            display: none;
+        }
 
-      app-header {
-        color: black;
-        background-color: var(--app-primary-color);
-      }
+        app-header {
+            color: white;
+            background-color: var(--app-primary-dark);
+        }
+    
+        
+        paper-tabs{
+            background-color: var(--app-primary-color);
+        }
+        
 
-      app-header paper-icon-button {
-        --paper-icon-button-ink-color: var(--app-secondary-color);
-      }
+        app-header paper-icon-button {
+            --paper-icon-button-ink-color: var(--app-ink-color);
+        }
 
-      .drawer-list {
-        margin: 0 20px;
-      }
+        #tab-bar{
+            height: 48px;
+        }
+        
+        .drawer-list {
+            margin: 0 20px;
+        }
 
-      .drawer-list a {
-        display: block;
-        padding: 0 16px;
-        text-decoration: none;
-        color: #424242;
-        line-height: 40px;
-      }
+        .drawer-list a {
+            display: block;
+            padding: 0 16px;
+            text-decoration: none;
+            color: #424242;
+            line-height: 40px;
+        }
 
-      .drawer-list a.iron-selected {
-        color: var(--app-accent-color);
-        font-weight: bold;
-        background-color: #eeeeee;
-      }
-        div[main-title]{
-            font-weight: 500;
+        .drawer-list a.iron-selected {
             color: var(--app-accent-color);
+            font-weight: bold;
+            background-color: #eeeeee;
+        }
+        
+        div[main-title]{
+            float: left;
             text-align: center;
+            font-weight: 600;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+        
+        div[main-title] img{
+            margin: 5px;
         }
         
         paper-tab{
@@ -80,6 +101,9 @@
             background-color: rgba(0,0,0,0);
         }
         
+        #drawer-toolbar{
+            background-color: var(--app-primary-light);
+        }
     </style>
 
     <app-location route="{{route}}"></app-location>
@@ -91,7 +115,7 @@
     <app-drawer-layout fullbleed force-narrow>
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer">
-        <app-toolbar>Menu</app-toolbar>
+        <app-toolbar id="drawer-toolbar">Menu</app-toolbar>
         <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
           <a name="home" href="/home"><iron-icon icon="app-icons:home"></iron-icon> Home</a>
           <a name="about" href="/about"><iron-icon icon="app-icons:business"></iron-icon> About Us</a>
@@ -105,21 +129,21 @@
         <app-header slot="header" reveals condenses effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="app-icons:menu" drawer-toggle hidden$="{{wideLayout}}"></paper-icon-button>
-            <div main-title>Carrillos Construction, Inc.</div>
+            <div main-title><!--img style="width: 32px;" src="../images/logo.png"-->Carrillos Construction, Inc.</div>
           </app-toolbar>
-          <app-toolbar hidden$="{{!wideLayout}}" sticky>
-            <paper-tabs selected="{{page}}" attr-for-selected="name" bottom-item>
-                <paper-tab name="home">
-                    <a href="/home">Home</a>
+          <app-toolbar id="tab-bar" hidden$="{{!wideLayout}}" sticky>
+            <paper-tabs selected="[[page]]" attr-for-selected="name" bottom-item>
+                <paper-tab name="home" link>
+                    <a href="/home"><iron-icon icon="app-icons:home"></iron-icon> Home</a>
                 </paper-tab>
-                <paper-tab name="about">
-                    <a href="/about">About Us</a>
+                <paper-tab name="about" link>
+                    <a href="/about"><iron-icon icon="app-icons:business"></iron-icon> About Us</a>
                 </paper-tab>
-                <paper-tab name="whatwedo">
-                    <a href="/whatwedo">What We Do</a>
+                <paper-tab name="whatwedo" link>
+                    <a href="/whatwedo"><iron-icon icon="app-icons:build"></iron-icon> What We Do</a>
                 </paper-tab>
-                <paper-tab name="contact">
-                    <a href="/contact">Contact Us</a>
+                <paper-tab name="contact" link>
+                    <a href="/contact"><iron-icon icon="app-icons:mail"></iron-icon> Contact Us</a>
                 </paper-tab>
             </paper-tabs>
           </app-toolbar>
@@ -141,9 +165,9 @@
     </app-drawer-layout>
   </template>
   <script>
-    class MyApp extends Polymer.Element {
+    class Construction extends Polymer.Element {
 
-      static get is() { return 'my-app'; }
+      static get is() { return 'carrillos-construction'; }
 
       static get properties() {
         return {
@@ -164,7 +188,7 @@
       _routePageChanged(page) {
         // Polymer 2.0 will call with `undefined` on initialization.
         // Ignore until we are properly called with a string.
-        if (page === undefined) {
+        if (page === undefined || page === 'index.html') {
           this.page = 'home';
           return;
         }
@@ -194,6 +218,6 @@
       }
     }
 
-    window.customElements. define(MyApp.is, MyApp);
+    window.customElements. define(Construction.is, Construction);
   </script>
 </dom-module>
