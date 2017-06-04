@@ -72,10 +72,6 @@
             --paper-icon-button-ink-color: var(--app-ink-color);
         }
 
-        #tab-bar{
-            height: 48px;
-        }
-
         .drawer-list {
             margin: 0 20px;
         }
@@ -228,7 +224,7 @@
       </app-drawer>
 
       <!-- Main content -->
-      <app-header-layout has-scrolling-region>
+      <app-header-layout id="appheader" has-scrolling-region>
         <app-header slot="header" reveals condenses effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="app-icons:menu" drawer-toggle hidden$="{{wideLayout}}"></paper-icon-button>
@@ -253,9 +249,10 @@
         <div class="main vertical-flex-container">
             <h4>- 100% service guarantee -</h4>
           <h1>OUR LEVEL OF <br> COMMITMENT HAS <br> <span class="bold700">NO LIMIT<span></h1>
-            <paper-fab icon="app-icons:arrow-down"></paper-fab>
+            <paper-fab icon="app-icons:arrow-down" on-tap="handleClick"></paper-fab>
         </div>
         <iron-pages
+            id="ironpages"
             selected="[[page]]"
             attr-for-selected="name"
             fallback-selection="view404"
@@ -290,6 +287,13 @@
         return [
           '_routePageChanged(routeData.page)',
         ];
+      }
+
+      handleClick(){
+        var off = $(this.$.ironpages).offset().top;
+        $(this.$.appheader.shadowRoot.childNodes[2].childNodes[3]).animate({
+          scrollTop: off
+        }, 1000);
       }
 
       _routePageChanged(page) {
