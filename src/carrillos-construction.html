@@ -123,7 +123,7 @@
         }
 
         .main{
-          min-height: 500px;
+          min-height: 650px;
           height: 100vh;
           width: 100%;
           padding: 0px;
@@ -172,6 +172,12 @@
           font-weight: 700;
         }
 
+        .main-logo{
+          max-height: 200px;
+          height: 100%;
+          width: auto;
+        }
+
         @media (min-width: 767px) {
             .main h1{
               font-size: 70px;
@@ -179,21 +185,31 @@
             .main h4{
               font-size: 18px;
             }
+
+            .main-logo{
+              max-height: 250px;
+            }
+
             .main{
-              min-height: 600px;
+              min-height: 900px;
             }
         }
 
         @media all and (min-width: 1050px) {
             .main h1{
-              font-size: 100px;
+              font-size: 90px;
             }
             .main h4{
               font-size: 25px;
             }
             .main{
-              min-height: 750px;
+              min-height: 1100px;
             }
+
+            .main-logo{
+              max-height: 300px;
+            }
+
         }
     </style>
 
@@ -220,7 +236,7 @@
         <app-header id="mainToolbar" slot="header" reveals condenses effects="waterfall">
           <app-toolbar>
             <paper-icon-button icon="app-icons:menu" drawer-toggle hidden$="{{wideLayout}}"></paper-icon-button>
-            <img style="width: auto; height:46px;" src="../images/logo.png">
+            <img style="width: auto; height:46px;" src="../images/Carrillos-Construction72.png">
             <div main-title>Carrillos Construction, Inc.</div>
             <paper-tabs selected="[[page]]" attr-for-selected="name" hidden$="{{!wideLayout}}">
                   <paper-tab name="home" link>
@@ -239,6 +255,7 @@
           </app-toolbar>
         </app-header>
         <div id="hero" class="main vertical-flex-container hide-this">
+          <img class="main-logo" src="../images/Carrillos-Construction96.png">
             <h4>- 100% service guarantee -</h4>
           <h1>OUR LEVEL OF <br> COMMITMENT HAS <br> <span class="bold700">NO LIMIT<span></h1>
             <paper-fab icon="app-icons:arrow-down" on-tap="handleClick"></paper-fab>
