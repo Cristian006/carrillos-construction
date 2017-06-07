@@ -1,4 +1,5 @@
 <link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/dry-stone-layout/dry-stone-layout.html">
 <link rel="import" href="shared-styles.html">
 <link rel="import" href="hero-img.html">
 <dom-module id="view-whatwedo">
@@ -27,8 +28,19 @@
               </p>
           <h1>How So?</h1>
             <p>We stand apart from other construction staffing companies. How so? First-hand knowledge and experience. Our proven approach to construction staffing ensures our staff arrives at your worksite with the skills, experience and attitude to get the job done right — every time.</p>
-          <h1>The Right Solution</h1>
+            <h1>The Right Solution</h1>
            <p>Carrillos Construction provides the right solutions for the most pressing issues at your golf course or private club. We build and maintain superior course conditions, we understand what our guests want because we take the time to ask them, and we deliver a consistently great experience.</p>
+           <br>
+           <dry-stone-layout id="dry" target-height="250" spacing="2">
+             <img src="../images/court.jpg" width="240" height="200">
+             <img src="../images/dark.jpg" width="180" height="200">
+             <img src="../images/dirt.jpg" width="240" height="163">
+             <img src="../images/golf.png" width="180" height="200">
+             <img src="../images/work.jpg" width="240" height="180">
+             <img src="../images/lawnmower.jpg" width="240" height="163">
+             <img src="../images/path.jpg" width="160" height="240">
+             <img src="../images/lawn.jpg" width="210" height="160">
+           </dry-stone-layout>
         </div>
       </div>
   </template>
@@ -37,7 +49,6 @@
     class What extends Polymer.Element {
       static get is() { return 'view-whatwedo'; }
     }
-
     window.customElements.define(What.is, What);
   </script>
 </dom-module>
