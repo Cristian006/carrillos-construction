@@ -9,11 +9,11 @@
         display: block;
           text-align: center;
       }
-    
+
         .content{
             padding: 20px;
         }
-            
+
             input[type="email"],
             input[type="text"] {
                 color: inherit;
@@ -34,7 +34,7 @@
             input[type="text"]:focus {
                 border-bottom: solid 2px var(--app-accent-color);
             }
-            
+
             textarea {
                 font-size: 1em;
                 margin: 0;
@@ -51,11 +51,11 @@
                 resize: none;
                 height: 150px;
             }
-            
+
             textarea:focus {
                 border-color: var(--app-accent-color);
             }
-            
+
             button {
                 margin-top: 15px;
                 width: 100%;
@@ -72,28 +72,27 @@
                 background-color: transparent;
                 transition: color 0.3s;
             }
-            
+
             button:hover {
                 color: var(--app-accent-color);
             }
     </style>
-      <hero-img img-src="../images/golf.png"></hero-img>
-        <div class="content">
-          <div class="container">
-              <id-card img-src="images/dirt.jpg" name="Carrillos Construction, Inc." phone="(989) 741-2614" email="carrillosconstructioninc@gmail.com" website="http://carrillos-construction.com" location="1101 SW 98th ter Pembroke Pines FL 33025"></id-card>
-              <form action="https://formspree.io/carrillosconstruction@gmail.com" method="POST">
-                <input type="text" name="name" placeholder="Your Name">
-                <br>
-                <input type="email" name="_replyto" placeholder="Your Email">
-                <br>
-                <input type="text" name="_subject" placeholder="Subject">
-                <br>
-                <textarea type="text" name="message" placeholder="Message"></textarea>
-                <br>
-                <button type="submit" value="Send">Send</button>
-            </form>
-          </div> 
-        </div>
+    <div class="content">
+      <div class="container">
+          <id-card img-src="images/dirt.jpg" name="Carrillos Construction, Inc." phone="(989) 741-2614" email="carrillosconstructioninc@gmail.com" website="http://carrillos-construction.com" location="1101 SW 98th ter Pembroke Pines FL 33025"></id-card>
+          <form action="https://formspree.io/carrillosconstruction@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Your Name">
+            <br>
+            <input type="email" name="_replyto" placeholder="Your Email">
+            <br>
+            <input type="text" name="_subject" placeholder="Subject">
+            <br>
+            <textarea type="text" name="message" placeholder="Message"></textarea>
+            <br>
+            <button type="submit" value="Send">Send</button>
+        </form>
+      </div>
+    </div>
   </template>
 
   <script>
